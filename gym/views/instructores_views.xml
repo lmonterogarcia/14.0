@@ -1,34 +1,47 @@
 <odoo>
   <record id="gym_instructores_form_view" model="ir.ui.view">
-    <field name="name">gym.instructores.form</field> 
-    <field name="model">gym.instructores</field> 
+    <field name="name">gym.instructores.form</field>
+    <field name="model">gym.instructores</field>
     <field name="arch" type="xml">
-      <form string="Instructor"> 
+      <form string="Instructor">
         <sheet layout="auto">
           <group>
             <field name="idcard" />
             <field name="name" />
             <field name="photo" />
-            <field name="gymclass_ids" widget="one2many" />
+            <field name="gymclass_ids" widget="one2many">
+              <form string="Classes">
+                <sheet layout="auto">
+                  <group>
+                    <field name="name" />
+                    <field name="start" />
+                    <field name="end" />
+                    <field name="capacity" />
+                    <field name="activityType" />
+                    <field name="material_ids" widget="many2many" />
+                    <field name="users_ids" widget="many2many" />
+                  </group>
+                </sheet>
+              </form>
+            </field>
           </group>
         </sheet>
       </form>
     </field>
   </record>
 
-  <record id="gym_instructores_tree_view" model="ir.ui.view"> 
+  <record id="gym_instructores_tree_view" model="ir.ui.view">
     <field name="name">gym.instructores.tree</field>
     <field name="model">gym.instructores</field>
     <field name="arch" type="xml">
       <tree string="tree_string">
         <field name="idcard" />
         <field name="name" />
-        <field name="photo" />
       </tree>
     </field>
   </record>
 
-  <record id="instructores_list_action" model="ir.actions.act_window"> 
+  <record id="instructores_list_action" model="ir.actions.act_window">
     <field name="name">Instructores</field>
     <field name="res_model">gym.instructores</field>
     <field name="view_mode">tree,form</field>

@@ -1,4 +1,5 @@
 <odoo>
+  <!-- From View -->
   <record id="gym_classes_form_view" model="ir.ui.view">
     <field name="name">gym.classes.form</field>
     <field name="model">gym.classes</field>
@@ -20,7 +21,8 @@
     </field>
   </record>
 
-  <record id="gym_classes_tree_view" model="ir.ui.view"> 
+  <!-- Tree View -->
+  <record id="gym_classes_tree_view" model="ir.ui.view">
     <field name="name">gym.classes.tree</field>
     <field name="model">gym.classes</field>
     <field name="arch" type="xml">
@@ -35,12 +37,43 @@
     </field>
   </record>
 
+
+  <!-- Calendar View -->
+  <record id="gym_classes_calendar" model="ir.ui.view">
+    <field name="name">gym.classes.calendar</field>
+    <field name="model">gym.classes</field>
+    <field name="arch" type="xml">
+      <calendar string="Clases" color="activityType" date_start="start" date_stop="end" mode="month">
+        <field name="name"/>
+        <field name="capacity"/>
+      </calendar>
+    </field>
+  </record>
+
+  <!-- Search View -->
+  <record model="ir.ui.view" id="gym_classes_search">
+    <field name="name">gym.classes.search</field>
+    <field name="model">gym.classes</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="users_ids"/>
+        <filter name="search_capacity" string="Capacidad > 10" domain="[('capacity','>',10)]"/>
+        <separator orientation="vertical" />
+        <group expand="0" string="Agrupar por...">
+          <filter name="group_by_instructor" string="Instructor" context="{'group_by':'instructores_id'}"/>
+          <!-- <filter name="group_by_cliente" string="Cliente" context="{'group_by':'users_ids'}"/> -->
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <!-- Action View -->
   <record id="classes_list_action" model="ir.actions.act_window">
     <field name="name">Classes</field>
     <field name="res_model">gym.classes</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,calendar,form,search</field>
     <field name="help" type="html">
-      <p class="o_view_nocontent_smiling_face">Crea la primera clase</p> 
+      <p class="o_view_nocontent_smiling_face">Crea la primera clase</p>
     </field>
-  </record> 
+  </record>
 </odoo>

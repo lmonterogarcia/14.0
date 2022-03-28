@@ -3,7 +3,7 @@
     <field name="name">gym.material.form</field>
     <field name="model">gym.material</field>
     <field name="arch" type="xml">
-      <form string="material">
+      <form string="Material">
         <sheet layout="auto">
           <group>
             <field name="name" />
@@ -30,7 +30,7 @@
   </record>
 
   <record id="material_list_action" model="ir.actions.act_window">
-    <field name="name">material</field>
+    <field name="name">Materiales</field>
     <field name="res_model">gym.material</field>
     <field name="view_mode">tree,form</field>
     <field name="help" type="html">

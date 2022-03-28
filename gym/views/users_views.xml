@@ -24,7 +24,6 @@
       <tree string="tree_string">
         <field name="idcard" />
         <field name="name" />
-        <field name="photo" />
       </tree>
     </field>
   </record>
