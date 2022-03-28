@@ -1,0 +1,6 @@
+<odoo>
+  <menuitem name="Helpdesk" id="helpdesk_test.menu_root" sequence="10"/>
+  <menuitem name="Helpdesk" id="helpdesk_test.menu_1" sequence="10" parent="helpdesk_test.menu_root"/>
+  <menuitem name="Ticket" id="helpdesk_test.menu_1_ticket" sequence="10" parent="helpdesk_test.menu_1" action="helpdesk_ticket_action"/>
+  <menuitem name="Tag" id="helpdesk_test.menu_2_ticket" sequence="40" parent="helpdesk_test.menu_1" action="helpdesk_ticket_tag_action"/>
+</odoo>
