@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="gym_expansion_menu" name="Expansion" parent="gym.main_gym_menu" groups="gym.group_gym_manager" />
+    <menuitem id="materiales_menu" name="Materiales" parent="gym_expansion_menu" groups="gym.group_gym_manager" action="materiales_list_action" />
+</odoo>
