@@ -1,0 +1,42 @@
+<odoo>
+  <record id="gym_pago_form_view" model="ir.ui.view">
+    <field name="name">gym.pago.form</field>
+    <field name="model">gym.pago</field>
+    <field name="arch" type="xml">
+      <form string="pago">
+        <sheet layout="auto">
+          <group>
+            <field name="id_pago" />
+            <field name="concept" />
+            <field name="amount" />
+            <field name="user_ids" widget="many2one"/>
+            <field name="payment_date" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="gym_pago_tree_view" model="ir.ui.view"> 
+    <field name="name">gym.pago.tree</field>
+    <field name="model">gym.pago</field>
+    <field name="arch" type="xml">
+      <tree string="tree_string">
+        <field name="id_pago" />
+        <field name="concept" />
+        <field name="amount" />
+        <field name="user_ids" />
+        <field name="payment_date" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="pago_list_action" model="ir.actions.act_window">
+    <field name="name">pago</field>
+    <field name="res_model">gym.pago</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer pago</p> 
+    </field>
+  </record> 
+</odoo>

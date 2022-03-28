@@ -1,0 +1,41 @@
+<odoo>
+  <record id="mensajeria_clientes_view_tree" model="ir.ui.view">
+    <field name="name">mensajeria.cliente.view.tree</field>
+    <field name="model">mensajeria.cliente</field>
+    <field name="arch" type="xml">
+      <tree string="tree_string">
+        <field name="nif" />
+        <field name="name" />
+        <field name="last_name" />
+        <field name="address" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="mensajeria_clientes_form" model="ir.ui.view">
+    <field name="name">mensajeria.cliente.form</field>
+    <field name="model">mensajeria.cliente</field>
+    <field name="arch" type="xml">
+      <form string="Cliente">
+        <sheet layout="auto">
+          <group>
+            <field name="nif" />
+            <field name="name" />
+            <field name="last_name" />
+            <field name="address" />
+            <field name="envio_ids" widget="one2Many"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="mensajeria_clientes_action" model="ir.actions.act_window">
+    <field name="name">Clientes</field>
+    <field name="res_model">mensajeria.cliente</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer cliente</p> 
+    </field>
+  </record>
+</odoo>

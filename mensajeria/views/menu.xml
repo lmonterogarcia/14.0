@@ -1,0 +1,11 @@
+<odoo>
+    <!-- Top menu item -->
+    <menuitem name="Mensajeria" id="main_mensajeria_menu"/>
+    <!-- menu categories -->
+    <menuitem name="Mensajeria" id="mesajeria_menu" parent="main_mensajeria_menu"/>
+    <!-- actions -->
+    <menuitem name="Centros" id="centros_menu" parent="mesajeria_menu" action="mensajeria_centros_action"/>
+    <menuitem name="Repartidores" id="repartidores_menu" parent="mesajeria_menu" action="mensajeria_repartidores_action"/>
+    <menuitem name="Clientes" id="clientes_menu" parent="mesajeria_menu" action="mensajeria_clientes_action"/>
+    <menuitem name="Envios" id="envios_menu" parent="mesajeria_menu" action="mensajeria_envios_action"/>
+</odoo>

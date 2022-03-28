@@ -1,0 +1,10 @@
+<odoo>
+  <record id="animal_list_action" model="ir.actions.act_window">
+    <field name="name">Animales</field>
+    <field name="res_model">zoo.animal</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer animal</p> 
+    </field>
+  </record> 
+</odoo>

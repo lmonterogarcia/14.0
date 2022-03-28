@@ -1,0 +1,40 @@
+<odoo>
+  <record id="gym_material_form_view" model="ir.ui.view">
+    <field name="name">gym.material.form</field>
+    <field name="model">gym.material</field>
+    <field name="arch" type="xml">
+      <form string="material">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="purchase_date" />
+            <field name="weight" />
+            <field name="activityType" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  
+  <record id="gym_material_tree_view" model="ir.ui.view"> 
+    <field name="name">gym.material.tree</field>
+    <field name="model">gym.material</field>
+    <field name="arch" type="xml">
+      <tree string="tree_string">
+        <field name="name" />
+        <field name="purchase_date" />
+        <field name="weight" />
+        <field name="activityType" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="material_list_action" model="ir.actions.act_window">
+    <field name="name">material</field>
+    <field name="res_model">gym.material</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer material</p> 
+    </field>
+  </record> 
+</odoo>

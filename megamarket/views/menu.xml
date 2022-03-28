@@ -1,0 +1,9 @@
+<odoo>
+    <!-- Top menu item -->
+  <menuitem name="MegaMarket" id="main_megamarket_menu"/>
+  <!-- menu categories -->
+  <menuitem name="MegaMarket" id="megamarket_menu" parent="main_megamarket_menu"/>
+  <!-- actions -->
+  <menuitem name="Electrodomesticos" id="electrodomesticos_menu" parent="megamarket_menu" action="electrodomestico_list_action"/>
+  <menuitem name="Clientes" id="clientes_menu" parent="megamarket_menu" action="cliente_list_action"/>
+</odoo>

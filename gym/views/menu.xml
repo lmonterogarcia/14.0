@@ -1,0 +1,14 @@
+<odoo>
+  <!-- Top menu item -->
+  <menuitem name="Gym" id="main_gym_menu" groups="group_gym_manager"/>
+
+  <!-- menu categories -->
+  <menuitem name="Gimnasio" id="gym_menu" groups="group_gym_manager" parent="main_gym_menu"/>
+
+  <!-- actions -->
+  <menuitem name="Clases" id="classes_menu" parent="gym_menu" groups="group_gym_manager" action="classes_list_action"/>
+  <menuitem name="Instructores" id="instructors_menu" parent="gym_menu" groups="group_gym_manager" action="instructores_list_action"/>
+  <menuitem name="Usuarios" id="users_menu" parent="gym_menu" groups="group_gym_manager" action="users_list_action"/>
+  <menuitem name="Materiales" id="material_menu" parent="gym_menu" groups="group_gym_manager" action="material_list_action"/>
+  <menuitem name="Pagos" id="pagos_menu" parent="gym_menu" groups="group_gym_manager" action="pago_list_action"/>
+</odoo>

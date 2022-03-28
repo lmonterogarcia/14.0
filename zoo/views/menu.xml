@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Top menu item -->
+  <menuitem name="Zoo" id="main_zoo_menu"/>
+  <!-- menu categories -->
+  <menuitem name="Zoo" id="zoo_menu" parent="main_zoo_menu"/>
+  <!-- actions -->
+  <menuitem name="Animales" id="animales_menu" parent="zoo_menu" action="animal_list_action"/>
+  <menuitem name="Cuidadores" id="cuidadores_menu" parent="zoo_menu" action="cuidador_list_action"/>
+  <menuitem name="Espacios" id="espacios_menu" parent="zoo_menu" action="espacio_list_action"/>
+</odoo>

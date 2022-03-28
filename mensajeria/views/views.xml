@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="mensajeria.list">
+      <field name="name">mensajeria list</field>
+      <field name="model">mensajeria.mensajeria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="mensajeria.action_window">
+      <field name="name">mensajeria window</field>
+      <field name="res_model">mensajeria.mensajeria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="mensajeria.action_server">
+      <field name="name">mensajeria server</field>
+      <field name="model_id" ref="model_mensajeria_mensajeria"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="mensajeria" id="mensajeria.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="mensajeria.menu_1" parent="mensajeria.menu_root"/>
+    <menuitem name="Menu 2" id="mensajeria.menu_2" parent="mensajeria.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="mensajeria.menu_1_list" parent="mensajeria.menu_1"
+              action="mensajeria.action_window"/>
+    <menuitem name="Server to list" id="mensajeria" parent="mensajeria.menu_2"
+              action="mensajeria.action_server"/>
+-->
+  </data>
+</odoo>

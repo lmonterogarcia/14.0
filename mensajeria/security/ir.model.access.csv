@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mensajeria_cliente,access_mensajeria_cliente,model_mensajeria_cliente,base.group_user,1,1,1,1
+access_mensajeria_repartidor,access_mensajeria_repartidor,model_mensajeria_repartidor,base.group_user,1,1,1,1
+access_mensajeria_centro,access_mensajeria_centro,model_mensajeria_centro,base.group_user,1,1,1,1
+access_mensajeria_envio,access_mensajeria_envio,model_mensajeria_envio,base.group_user,1,1,1,1

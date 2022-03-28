@@ -1,0 +1,43 @@
+<odoo>
+  <record id="mensajeria_repartidors_view_tree" model="ir.ui.view">
+    <field name="name">mensajeria.repartidor.view.tree</field>
+    <field name="model">mensajeria.repartidor</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="nif" />
+        <field name="name" />
+        <field name="last_name" />
+        <field name="zona" />
+        <field name="centro_id" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="mensajeria_repartidors_form" model="ir.ui.view">
+    <field name="name">mensajeria.repartidor.form</field>
+    <field name="model">mensajeria.repartidor</field>
+    <field name="arch" type="xml">
+      <form string="Repartidor">
+        <sheet>
+          <group>
+            <field name="nif" />
+            <field name="name" />
+            <field name="last_name" />
+            <field name="zona" />
+            <field name="centro_id" widget="one2Many"/>
+            <field name="envio_ids" widget="Many2one"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="mensajeria_repartidores_action" model="ir.actions.act_window">
+    <field name="name">Repartidores</field>
+    <field name="res_model">mensajeria.repartidor</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer repartidor</p> 
+    </field>
+  </record>
+</odoo>

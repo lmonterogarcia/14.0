@@ -1,0 +1,46 @@
+<odoo>
+  <record id="mensajeria_envios_view_tree" model="ir.ui.view">
+    <field name="name">mensajeria.envio.view.tree</field>
+    <field name="model">mensajeria.envio</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="shipping_code" />
+        <field name="precio_envio" />
+        <field name="centro_id" />
+        <field name="cliente_id" />
+        <field name="repartidor_id" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="mensajeria_envios_form" model="ir.ui.view">
+    <field name="name">mensajeria.envio.form</field>
+    <field name="model">mensajeria.envio</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <sheet>
+          <group>
+            <field name="shipping_code" />
+            <field name="alto" />
+            <field name="ancho" />
+            <field name="largo" />
+            <field name="peso" />
+            <field name="precio_envio" />
+            <field name="centro_id" widget = "many2one"/>
+            <field name="cliente_id" widget = "many2one"/>
+            <field name="repartidor_id" widget = "many2one"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="mensajeria_envios_action" model="ir.actions.act_window">
+    <field name="name">Envios</field>
+    <field name="res_model">mensajeria.envio</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer envio</p> 
+    </field>
+  </record>
+</odoo>

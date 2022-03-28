@@ -1,0 +1,40 @@
+<odoo>
+  <record id="mensajeria_centros_view_tree" model="ir.ui.view">
+    <field name="name">mensajeria.centro.view.tree</field>
+    <field name="model">mensajeria.centro</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name" />
+        <field name="center_id" />
+        <field name="address" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="mensajeria_centros_form" model="ir.ui.view">
+    <field name="name">mensajeria.centro.form</field>
+    <field name="model">mensajeria.centro</field>
+    <field name="arch" type="xml">
+      <form string="Centros">
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="center_id" />
+            <field name="address" />
+            <field name="envio_ids" widget="one2Many"/>
+            <field name="repartidor_ids" widget="one2Many"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="mensajeria_centros_action" model="ir.actions.act_window">
+    <field name="name">Centros</field>
+    <field name="res_model">mensajeria.centro</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer centro</p> 
+    </field>
+  </record>
+</odoo>
