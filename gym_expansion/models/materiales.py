@@ -3,11 +3,11 @@
 from odoo import models, fields, api
 
 
-class gym_expansion(models.Model):
-    _name = 'gymexpansion.materiales'
+class GymExpansion(models.Model):
+    _name = 'gym_expansion.materiales'
     _description = 'Materiales Gym Alquiler'
 
-    name = fields.Char(string='Materiales de alquiler', required=True, help='Nombre del material')
+    name = fields.Char(string='Nombre', required=True, help='Nombre del material')
     quantity = fields.Integer(string='unidades disponibles')
     
     material_type = fields.Selection(

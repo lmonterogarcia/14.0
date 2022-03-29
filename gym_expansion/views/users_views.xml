@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="gym_user_form_inherited_view" model="ir.ui.view">
+        <field name="name">gym_expansion_users_form</field>
+        <field name="model">gym.users</field>
+        <field name="inherit_id" ref="gym.gym_users_form_view" />
+        <field name="arch" type="xml">
+            <field name="classes_ids" position="after">
+                <field name="materiales_ids"/>
+            </field>
+        </field>
+    </record>
+</odoo>

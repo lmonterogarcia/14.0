@@ -2,7 +2,7 @@
 
   <record id="gym_expansion_materiales_tree" model="ir.ui.view">
     <field name="name">gym_expansion.materiales.tree</field>
-    <field name="model">gymexpansion.materiales</field>
+    <field name="model">gym_expansion.materiales</field>
     <field name="arch" type="xml">
       <tree>
         <field name="name"/>
@@ -14,11 +14,12 @@
 
   <record id="gym_expansion_form" model="ir.ui.view">
     <field name="name">gym_expansion.form</field>
-    <field name="model">gymexpansion.materiales</field>
+    <field name="model">gym_expansion.materiales</field>
     <field name="arch" type="xml">
       <form string="">
         <sheet>
           <group>
+            <label for="name"/>
             <field name="name"/>
             <group>
               <field name="quantity"/>
@@ -39,8 +40,8 @@
   </record>
 
   <record id="materiales_list_action" model="ir.actions.act_window">
-    <field name="name">materiales.list.action</field>
-    <field name="res_model">gymexpansion.materiales</field>
+    <field name="name">Materiales para alquiler</field>
+    <field name="res_model">gym_expansion.materiales</field>
     <field name="view_mode">tree,form</field>
   </record>
 </odoo>

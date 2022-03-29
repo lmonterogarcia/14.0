@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_gym_expansion_materiales,access_gym_expansion_materiales,model_gymexpansion_materiales,base.group_user,1,1,1,1
+access_gym_expansion_materiales,access_gym_expansion_materiales,model_gym_expansion_materiales,gym.group_gym_manager,1,1,1,1

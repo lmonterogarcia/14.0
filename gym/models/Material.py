@@ -6,7 +6,7 @@ class Material(models.Model):
     _description = 'Material Classes'
 
     name = fields.Char(string="Nombre", required=True, help="nombre del material")
-    purchase_date = fields.Date('Fecha de adquisición',required=True, autodate = True)
+    purchase_date = fields.Date('Fecha de adquisición',required=True)
     weight = fields.Float('Peso KG', (5,3))
     activityType = fields.Selection([('movil','Móvil'),
                                     ('fijo','Fijo'),],

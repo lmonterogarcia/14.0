@@ -7,8 +7,8 @@ class Classes(models.Model):
 
     name = fields.Char(string="Titulo", required=True, help="nombre del gimnasio") 
     description = fields.Text('Descripción')
-    start = fields.Datetime('Comieza',required=True, autodate = True)
-    end = fields.Datetime('Termina',required=True, autodate = True)
+    start = fields.Datetime('Comieza',required=True)
+    end = fields.Datetime('Termina',required=True)
     capacity = fields.Integer("Capacidad")
     activityType = fields.Selection([('dance','Baile'),
                                     ('aerobic','Aerobico'),
