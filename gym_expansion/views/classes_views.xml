@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="classes_extension_form" model="ir.ui.view">
+        <field name="name">classes.extension.form</field>
+        <field name="model">gym.classes</field>
+        <field name="inherit_id" ref="gym.gym_classes_form_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="code"/>
+            </field>
+        </field>
+    </record>
+</odoo>

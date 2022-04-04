@@ -2,3 +2,4 @@
 
 from . import materiales
 from . import users
+from . import classes
