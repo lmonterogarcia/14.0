@@ -2,4 +2,4 @@
 
 from . import materiales
 from . import users
-from . import classes
+from ...account_code_expansion.models import AccountCode
