@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="account.res_config_settings_view_form" />
     <field name="arch" type="xml">
       <xpath expr="//div[@id='analytic']" position="after">
-        <h2>Código Contable</h2>
+        <h2>Código de las Cuentas Contables</h2>
         <div class="row mt16 o_settings_container" id="account_code">
           <div class="col-12 col-lg-6 o_setting_box">
             <div class="o_setting_left_pane">
@@ -26,11 +26,6 @@
             <div class="o_setting_right_pane">
               <span class="o_form_label">Configuración personalizada</span>
               <div>
-                <label for="fill_with"/>
-                <field name="fill_with"/>
-                <div class="text-muted">
-                  Caracter o dígito con el que se rellenran los registros de cuentas contables
-                </div>
                 <label for="max_field_len"/>
                 <field name="max_field_len"/>
                 <div class="text-muted">
@@ -40,11 +35,6 @@
                 <field name="special_character"/>
                 <div class="text-muted">
                   Caracter que se utiliza para especificar donde rellenar los registros de cuentas contables
-                </div>
-                <label for="special_account"/>
-                <field name="special_account"/>
-                <div class="text-muted">
-                  Cuenta especial
                 </div>
               </div>
             </div>

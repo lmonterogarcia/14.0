@@ -2,4 +2,4 @@
 
 from . import materiales
 from . import users
-from ...account_code_expansion.models import AccountCode
+from ...gts_lualca_account_code.models import account_code
