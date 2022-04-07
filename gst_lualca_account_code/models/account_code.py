@@ -35,10 +35,10 @@ class AccountCode(models.Model):
         if change_code and "code" in vals:
             if len(vals["code"]) > int(
                 max_field_len
-            ):  # max_field_len viene en forma de String por eso el parseo a int.
+            ):  # max_field_len comes in the form of a String so parse it to int
                 raise ValidationError(
                     _(
-                        'El código no puede tener más de {} dígitos contando con "{}"'.format(
+                        'The code cannot have more than {} digits counting "{}"'.format(
                             max_field_len, special_character
                         )
                     )
@@ -48,7 +48,7 @@ class AccountCode(models.Model):
                     len(vals["code"]) == int(max_field_len)
                     and vals["code"]
                     or vals["code"].ljust(int(max_field_len), FILL_WITH)
-                )  # Lo deja tal cual o completa un string con un caracter al final hasta llegar a un length determinado
+                )  # Leave it as it is or complete a string with a character at the end until reaching a certain length
             elif (
                 special_character in vals["code"]
                 and vals["code"].count(special_character) == 1
@@ -57,13 +57,13 @@ class AccountCode(models.Model):
                 replacement = ""
                 for n in range(
                     int(max_field_len) - (len(vals["code"]) - 1)
-                ):  # max_field_len viene en forma de String por eso el parseo a int.
+                ):  # max_field_len comes in the form of a String so parse it to int
                     replacement += FILL_WITH
 
                 vals["code"] = vals["code"].replace(special_character, replacement)
 
             else:
-                raise ValidationError(_("El código no es correcto"))
+                raise ValidationError(_("The code is not correct"))
 
         return vals
 

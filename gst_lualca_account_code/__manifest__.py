@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "account_code_expansion",
+    'name': "Lualca - Restringir código cuenta contable (GST)",
 
-    'summary': """Extencion del modulo account""",
+    'summary': """Extencion del modulo account, restrigir el ingreso de código de cuenta contable""",
 
     'description': """Extencion del modulo account para restringir como se crear el código de las cuentas contables""",
 
@@ -10,8 +10,6 @@
     'website': "http://www.guadaltech.es",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
 
@@ -20,7 +18,6 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'views/res_config_account_views.xml',
     ],
 }

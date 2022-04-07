@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="account.res_config_settings_view_form" />
     <field name="arch" type="xml">
       <xpath expr="//div[@id='analytic']" position="after">
-        <h2>Código de las Cuentas Contables</h2>
+        <h2>Accounting Accounts Code</h2>
         <div class="row mt16 o_settings_container" id="account_code">
           <div class="col-12 col-lg-6 o_setting_box">
             <div class="o_setting_left_pane">
@@ -16,7 +16,7 @@
             <div class="o_setting_right_pane">
               <label for="change_code"/>
               <div class="text-muted">
-                Activa la posibilidad de personalizar como se guardan la numeración de las cuentas contables
+                Activates the possibility of customizing how the numbering of the ledger accounts is saved
               </div>
             </div>
           </div>
@@ -24,17 +24,17 @@
             <div class="o_setting_left_pane">
             </div>
             <div class="o_setting_right_pane">
-              <span class="o_form_label">Configuración personalizada</span>
+              <span class="o_form_label">Custom settings</span>
               <div>
                 <label for="max_field_len"/>
                 <field name="max_field_len"/>
                 <div class="text-muted">
-                  Longitud que tendrán los códigos de las cuentas contables
+                  Length that the accounting account codes will have
                 </div>
                 <label for="special_character"/>
                 <field name="special_character"/>
                 <div class="text-muted">
-                  Caracter que se utiliza para especificar donde rellenar los registros de cuentas contables
+                  Character used to specify where to populate ledger account records
                 </div>
               </div>
             </div>
