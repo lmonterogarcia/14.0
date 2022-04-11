@@ -12,25 +12,37 @@ class AccountCode(models.Model):
 
     _inherit = "account.account"
 
+    max_field_len_config = fields.Char(
+        string="Change Code", compute="_compute_max_field_len_config"
+    )
+    
+    def _compute_max_field_len_config(self):
+        for record in self:
+            record.change_code_config = (
+                self.env["ir.config_parameter"].get_param(
+                    "account_account_max_field_len"
+                )
+                or "6"
+            )
+
     def _change_code(self, vals):
 
         FILL_WITH = "0"
 
-        change_code = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("account.account.change_code")
-        )
-        max_field_len = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("account.account.max_field_len")
-        )
-        special_character = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("account.account.special_character")
-        )
+        if "super_changed" in vals and vals["super_changed"]:
+            change_code = vals["change_code"]
+            max_field_len = vals["max_field_len"]
+            special_character = vals["special_character"]
+        else:
+            change_code = self.env["ir.config_parameter"].get_param(
+                "account_account_change_code"
+            )
+            max_field_len = self.env["ir.config_parameter"].get_param(
+                "account_account_max_field_len"
+            )
+            special_character = self.env["ir.config_parameter"].get_param(
+                "account_account_special_character"
+            )
 
         if change_code and "code" in vals:
             if len(vals["code"]) > int(
@@ -53,18 +65,29 @@ class AccountCode(models.Model):
                 special_character in vals["code"]
                 and vals["code"].count(special_character) == 1
                 and len(vals["code"]) > 1
+                and vals["code"][0] != special_character
+                and vals["code"][0 : vals["code"].find(special_character)].isdigit()
+                and (
+                    vals["code"][(vals["code"].find(special_character) + 1) :].isdigit()
+                    or vals["code"][(vals["code"].find(special_character) + 1) :] == ""
+                )
             ):
                 replacement = ""
                 for n in range(
                     int(max_field_len) - (len(vals["code"]) - 1)
                 ):  # max_field_len comes in the form of a String so parse it to int
                     replacement += FILL_WITH
-
                 vals["code"] = vals["code"].replace(special_character, replacement)
 
             else:
                 raise ValidationError(_("The code is not correct"))
 
+            if "super_changed" in vals and vals["super_changed"]:
+                vals.pop("super_changed")
+                vals.pop("change_code")
+                vals.pop("max_field_len")
+                vals.pop("special_character")
+                
         return vals
 
     @api.model
