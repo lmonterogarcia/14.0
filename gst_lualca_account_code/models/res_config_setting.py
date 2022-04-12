@@ -34,7 +34,7 @@ class ResConfigSettings(models.TransientModel):
     def _decrease_code(self, code, company_id, code_len):
         code_result = code
         position = 4
-        
+
         for n in range(code_len - self.max_field_len):
             if code_result[position] == "0":
                 code_result = code_result[:position] + code_result[position + 1 :]
@@ -106,15 +106,28 @@ class ResConfigSettings(models.TransientModel):
 
     # Methods to set the values in ResConfigSettings
     def set_values(self):
-        self._account_code_verification()
+
         res = super(ResConfigSettings, self).set_values()
-        self.env["ir.config_parameter"].set_param(
-            "account_account_change_code", self.change_code
-        )
-        self.env["ir.config_parameter"].set_param(
-            "account_account_max_field_len", self.max_field_len
-        )
-        self.env["ir.config_parameter"].set_param(
-            "account_account_special_character", self.special_character
-        )
+        if self.change_code:
+            self._account_code_verification()
+            self.env["ir.config_parameter"].set_param(
+                "account_account_change_code", self.change_code
+            )
+            self.env["ir.config_parameter"].set_param(
+                "account_account_max_field_len", self.max_field_len
+            )
+            self.env["ir.config_parameter"].set_param(
+                "account_account_special_character", self.special_character
+            )
+        elif not self.change_code:
+            self._cr.execute(
+                "DELETE FROM ir_config_parameter WHERE key = 'account_account_change_code'"
+            )
+            self._cr.execute(
+                "DELETE FROM ir_config_parameter WHERE key = 'account_account_max_field_len'"
+            )
+            self._cr.execute(
+                "DELETE FROM ir_config_parameter WHERE key = 'account_account_special_character'"
+            )
+
         return res

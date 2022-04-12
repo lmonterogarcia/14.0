@@ -15,15 +15,6 @@ class AccountCode(models.Model):
     max_field_len_config = fields.Char(
         string="Change Code", compute="_compute_max_field_len_config"
     )
-    
-    def _compute_max_field_len_config(self):
-        for record in self:
-            record.change_code_config = (
-                self.env["ir.config_parameter"].get_param(
-                    "account_account_max_field_len"
-                )
-                or "6"
-            )
 
     def _change_code(self, vals):
 
